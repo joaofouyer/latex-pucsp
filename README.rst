@@ -12,7 +12,8 @@ Estrutura do Projeto
 
 Entender a estrutura do projeto pode servir de auxílio para realizar as modificações necessárias.
 
-::
+.. code-block:: bash
+
     tcc-latex
     ├── main.tex
     ├── capitulos
