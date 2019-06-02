@@ -43,13 +43,13 @@ Entender a estrutura do projeto pode servir de auxílio para realizar as modific
 Adaptando para seu trabalho
 ---------------------------
 
-O arquivo principal do projeto é o `main.tex`, que pode ser divido entre elementos *pré-textuais, textuais e pós-textuais*
+O arquivo principal do projeto é o ``main.tex``, que pode ser divido entre elementos *pré-textuais, textuais e pós-textuais*
 
-Os elementos pré-textuais -- que estão no arquivo `pre-texto.tex` -- descrevem, por exemplo o **título, autor, orientador e a universidade**. É nele também que você define o que deverá ser *impresso* ou não -- como a folha de aprovação, ficha catalográfica e a lista de figuras.
+Os elementos pré-textuais -- que estão no arquivo ``pre-texto.tex`` -- descrevem, por exemplo o **título, autor, orientador e a universidade**. É nele também que você define o que deverá ser *impresso* ou não -- como a folha de aprovação, ficha catalográfica e a lista de figuras.
 
-Os elementos textuais são os capítulos em si. Os capítulos foram divididos em arquivos que estão dentro da pasta `capitulos`. Caso queira criar um novo capítulo, basta criar um novo arquivo e adicioná-lo no `main.tex` utilizando o comando `\input{capitulo/nome-do-arquivo}` ou `\include{capitulo/nome-do-arquivo}`.
+Os elementos textuais são os capítulos em si. Os capítulos foram divididos em arquivos que estão dentro da pasta ``capitulos``. Caso queira criar um novo capítulo, basta criar um novo arquivo e adicioná-lo no `main.tex` utilizando o comando ``\input{capitulo/nome-do-arquivo}`` ou ``\include{capitulo/nome-do-arquivo}``.
 
-Por fim, os elementos pós-textuais estão no arquivo `pos-texto.tex`. O mais importante, talvez, seja a invocação das referências bibliográficas. Glossário, anexo e apêndice podem ser opcioanis na maioria dos trabalhos acadêmicos.
+Por fim, os elementos pós-textuais estão no arquivo ``pos-texto.tex``. O mais importante, talvez, seja a invocação das referências bibliográficas. Glossário, anexo e apêndice podem ser opcioanis na maioria dos trabalhos acadêmicos.
 
 
 Autor:
