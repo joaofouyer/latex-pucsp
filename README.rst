@@ -54,7 +54,7 @@ Por fim, os elementos pós-textuais estão no arquivo ``pos-texto.tex``. O mais 
 
 Autor:
 -------
-João E. L. Fouyer <jfouyer@gmail.com>
+`João E. L. Fouyer`_ <jfouyer@gmail.com>
 
 .. |rocket| replace:: 🚀
 .. _João E. L. Fouyer: http://lattes.cnpq.br/9901346603428982
