@@ -1,0 +1,32 @@
+% Parece difícil criar uma tabela para o cronograma? Não se preocupe! Utilize o gerador de tabelas LaTeX do https://www.tablesgenerator.com/ e gere o código automaticamente.
+% Se por algum motivo a tabela não ficar centralizada ou na posição do texto que você quiser, utilize o 'posicionador' H. <https://www.overleaf.com/learn/latex/Positioning_images_and_tables>
+
+\begin{table}[h!]
+\centering
+\caption{Representação do cronograma das Atividades}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|
+>{\columncolor[HTML]{EFEFEF}}c |c|c|c|c|
+>{\columncolor[HTML]{EFEFEF}}c |}
+\hline
+\textbf{Atividades} & \textbf{fev} & \textbf{mar} & \textbf{abr} & \textbf{mai} & {\color[HTML]{333333} \textbf{jun}} & \textbf{jul} & \textbf{ago} & \textbf{set} & \textbf{out} & \textbf{nov} \\ \hline
+
+Atividade 1 & x & x & x &  & {\color[HTML]{333333} } &  &  &  &  &  \\ \hline
+
+Atividade 2 & x & x & x & x & {\color[HTML]{333333} x} &  &  &  &  &  \\ \hline
+
+Atividade 3 &  &  &  & x & {\color[HTML]{333333} x} & x &  &  &  &  \\ \hline
+
+Atividade 4 &  &  &  & x & {\color[HTML]{333333} x} & x &  &  &  &  \\ \hline
+
+Atividade 5 &  &  &  &  & {\color[HTML]{333333} } & x & x & x & x & x \\ \hline
+
+Atividade 6 &  &  &  &  & {\color[HTML]{333333} } & x & x & x & x & x \\ \hline
+
+Atividade 7 &  &  &  &  & {\color[HTML]{333333} } &  &  & x & x & x \\ \hline
+
+\end{tabular}%
+}
+\\[10pt]
+\caption*{As colunas em destaque representam os \emph{milestones} da defesa do TCC1 e TCC2. Não é necessário apresentar o cronograma na entrega final.}
+\end{table}
