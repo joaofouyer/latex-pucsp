@@ -1,5 +1,7 @@
 Modelo Canônico de Trabalho Acadêmico em LaTeX.
 ===============================================
+.. license:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
+   :target: https://opensource.org/licenses/Apache-2.0
 
 Este repositório contém um documento que tem por objetivo servir de modelo para a elaboração de trabalhos acadêmicos, como monografias, TCC, teses de mestrado etc. A estutura texto segue o modelo indicado para a elaboração de trabalhos de conclusão para o curso de Ciência da Computação da PUC-SP,  entretanto, você *deve* modificá-lo para adaptar à sua pesquisa acadêmica |rocket|.
 
