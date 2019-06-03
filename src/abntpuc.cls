@@ -12,7 +12,7 @@
 \RequirePackage[utf8]{inputenc}
 \usepackage[a4paper]{geometry}
 \geometry{top=3cm,bottom=2cm,left=3cm,right=2cm}
-\usepackage{times}
+\usepackage{lmodern}
 \setlength{\parindent}{1.25cm}
 \setlength{\baselineskip}{1.5\baselineskip}
 \usepackage{chngcntr}
