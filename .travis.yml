@@ -6,4 +6,4 @@ tex-config:
 - build-pattern=example.tex
 
 script:
-- docker run --mount src=${TRAVIS_BUILD_DIR},target=/repo,type=bind strauman/travis-latexbuild:small
+- docker run --mount src=${TRAVIS_BUILD_DIR}/,target=/repo,type=bind strauman/travis-latexbuild:small
