@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+sudo apt-get install lmodern
 export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 if ! command -v texlua > /dev/null; then
   wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
