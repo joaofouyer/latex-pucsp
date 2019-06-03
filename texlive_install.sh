@@ -31,6 +31,7 @@ tlmgr install   \
   lastpage	\
   tabularx	\
   enumerate	\
+  texlive-lang-portuguese
 
 tlmgr option -- autobackup 0
 tlmgr update --self --all --no-auto-install
