@@ -2,7 +2,8 @@ Modelo Canônico de Trabalho Acadêmico em LaTeX.
 ===============================================
 .. image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
    :target: https://opensource.org/licenses/Apache-2.0
-
+.. image:: https://travis-ci.org/joaofouyer/tcc-latex.svg?branch=master
+   :target: https://travis-ci.org/joaofouyer/tcc-latex
 Este repositório contém um documento que tem por objetivo servir de modelo para a elaboração de trabalhos acadêmicos, como monografias, TCC, teses de mestrado etc. A estutura texto segue o modelo indicado para a elaboração de trabalhos de conclusão para o curso de Ciência da Computação da PUC-SP,  entretanto, você *deve* modificá-lo para adaptar à sua pesquisa acadêmica |rocket|.
 
 O modelo não foi criado do zero. Ele foi modificado a partir do abnTeX2_, que mantém uma comunidade ativa para elaboração de trabalhos acadênicos seguindo normas ABNT. Portanto, apesar de ser adaptado, este modelo segue as normas ABNT vigentes para elaboração de trabalhos acadêmicos.
