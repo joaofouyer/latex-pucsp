@@ -8,7 +8,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{abntpuc}
 \LoadClass[a4paper, 12pt]{report}
-\usepackage[brazil]{babel}
+\usepackage[brazilian]{babel}
 \RequirePackage[utf8]{inputenc}
 \usepackage[a4paper]{geometry}
 \geometry{top=3cm,bottom=2cm,left=3cm,right=2cm}
