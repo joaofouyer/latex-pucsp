@@ -11,3 +11,6 @@ deploy:
   file: output.pdf
   on:
     repo: joaofouyer/tcc-latex
+    branches:   
+    only:     
+        - master 
