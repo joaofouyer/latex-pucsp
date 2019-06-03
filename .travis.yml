@@ -1,9 +1,10 @@
-sudo:       required
-language:   generic
-services:   docker
-
-tex-config:
-- build-pattern=example.tex
-
+install:
+ - source ./texlive_install.sh
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
 script:
-- docker run --mount src=${TRAVIS_BUILD_DIR}/,target=/repo,type=bind strauman/travis-latexbuild:small
+- mkdir _build
+# Prefix command with travis_wait x so it times out after 3 mins
+- travis_wait 3 pdflatex -output-directory _build ./src/nameofmytexfile.tex
