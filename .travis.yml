@@ -5,8 +5,8 @@ services:   docker
 tex-config:
 - tex-scheme=small
 - push-type=none
-- build-pattern=tests/*/main.tex
-- packages=lipsum, blindtext
+- build-pattern = "*.tex", "capitulos/*.tex", "main/*.tex"
+- packages =fancyhdr,booktabs,graphicx,xcolor,lipsum,graphicx
 
 script:
 - docker pull strauman/travis-latexbuild:small
