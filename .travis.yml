@@ -1,11 +1,16 @@
 sudo: required
 language: generic
 services: docker
-
 script:
-  # We use the docker image from https://hub.docker.com/r/dxjoke/tectonic-docker/
-  # Compiling only main.tex:
-  - docker run --mount src=${TRAVIS_BUILD_DIR}/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic main.tex"
-  # Compiling multiple files as well as using biber:
-#  - docker run --mount src=$TRAVIS_BUILD_DIR,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic --keep-intermediates --reruns 0 biber-mwe.tex; biber biber-mwe; tectonic biber-mwe.tex; tectonic main.tex"
-
+- docker run --mount src=${TRAVIS_BUILD_DIR}/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
+  /bin/sh -c "tectonic main.tex"
+deploy:
+  provider: releases
+  api_key:
+    secure: LnIRRrkbTH5tGisGJME9BqGj3J5QgpDbJ0axxDtvGqCUKU6kJCMcuKcUubCRR2aCiAn0OMUA8P2FIz0mrp4JNt2dwsETabRocFuZARH8IYLbsfSOs4Cygs5k08Sibeo9HxS5GdybITcqq5boIFbxcXKxzPbHK8mkwl2DMDBcTB0zoYbIKX8EbF1NsV1ah3Fbbniikv6s29DTYn/cCuIpvQM7TqfVoQ2xmdbZA9SUoSR+hezEZAfbOpViPrEiKR/18zs4xNzolhptmV27xAHJu0dF9d/HP0U06XZMN2K4fUHdptrQiEub68Tlx/fYtZspObsst62O+A9K1aL939gnrjyilAfw1kmn8oC8jUzvTHE3prpTb7uDNKJedrdYArAa97uDHNoVsAQXUes5LbKMtX5vcS6crSpRZv38S6gvXALnXoESkJzTYmvPszPwPXG0U9H9v8lUDpxw1w7O8lherrblI6nrDoMYmSWJXVTJlTV+FQhUyaOwLbr7LItRdYmrOlAedVmJj4Rk6rx2XTttJ5FTd4DTXfy/lkE4V55GXp6Dxt+KoV77E4WPitwL/MIHH7HVszzJfHx/WO0yyXGCNh3fZ9QaAZpArwCRy6cUIIx8aVk6FJQMH2RxD+ztH0zc4xcapwu0lwnI1cw1tznNXW6EdUraFnzvkRf84EOwr4Y=
+  file: 
+  - ./src/output.pdf
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: master
