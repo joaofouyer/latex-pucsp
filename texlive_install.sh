@@ -31,7 +31,10 @@ tlmgr install   \
   lastpage	\
   tabularx	\
   enumerate	\
-  babel-portuges
+  babel-portuges\
+  texlive-latex-base\
+  texlive-full
+
 
 tlmgr option -- autobackup 0
 tlmgr update --self --all --no-auto-install
