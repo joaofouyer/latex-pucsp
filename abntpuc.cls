@@ -24,14 +24,6 @@
 \captionsetup[table]{labelsep=endash,labelfont=bf,textfont=bf}
 \pagestyle {empty}
 \pagestyle {myheadings}
-\newcommand{\iniciocapitulo}
-{
-%\thispagestyle {empty}
-%\pagestyle {myheadings}
-%\thispagestyle {myheadings}
-%\hspace{1.5\baselineskip}
-\hspace{1.25cm}
-}
 
 % -- Enumeração de Listas -- 
 \usepackage{enumerate}
@@ -365,17 +357,19 @@
 \setlength{\cftsubsubsecindent}{0em}
 \renewcommand{\cftsubsubsecfont}{\bfseries}
 %\usepackage{titlesec}
+
 % --- Titulo de capitulo ---
 \newcommand{\capitulo}[1]{\chapter{#1} \thispagestyle{myheadings}}
-\renewcommand{\@makechapterhead}[1]{\noindent{\textup{\textbf{\thechapter~#1}}}\vspace{1.5\baselineskip}}
+\renewcommand{\@makechapterhead}[1]{\noindent{\MakeUppercase{\textbf{\thechapter~#1}}}\vspace{0.5cm}}
+
 % --- Titulo de secao ---
 \newcommand{\secao}[1]{\section{#1}}
 \renewcommand{\section}{\@startsection
 {section}
 {0}
 {0mm}
-{1.5\baselineskip}
-{1.5\baselineskip}
+{0.8\baselineskip}
+{0.8\baselineskip}
 {\noindent\bfseries}}
 
 % --- Titulo de subsecao ---
@@ -384,8 +378,8 @@
 {subsection}
 {1}
 {0mm}
-{1.5\baselineskip}
-{1.5\baselineskip}
+{0.8\baselineskip}
+{0.8\baselineskip}
 {\noindent\itshape}}
 
 % --- Titulo de subsubsecao ---
@@ -394,8 +388,8 @@
 {subsubsection}
 {2}
 {0mm}
-{1.5\baselineskip}
-{1.5\baselineskip} 
+{0.8\baselineskip}
+{0.8\baselineskip} 
 {\noindent\bfseries}} 
 
 
