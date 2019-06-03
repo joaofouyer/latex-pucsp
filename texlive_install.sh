@@ -33,7 +33,8 @@ tlmgr install   \
   enumerate	\
   babel-portuges\
   texlive-latex-base\
-  texlive-full
+  texlive-full	\
+  pgffor
 
 
 tlmgr option -- autobackup 0
