@@ -8,29 +8,46 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{abntpuc}
 \LoadClass[a4paper, 12pt]{report}
-\usepackage[brazilian]{babel}
+
+\RequirePackage[brazilian]{babel}
 \RequirePackage[utf8]{inputenc}
-\usepackage[a4paper]{geometry}
-\geometry{top=3cm,bottom=2cm,left=3cm,right=2cm}
-\usepackage{lmodern}
-\setlength{\parindent}{1.25cm}
-\setlength{\baselineskip}{1.5\baselineskip}
-\usepackage{chngcntr}
-\usepackage{caption}
+\RequirePackage[a4paper]{geometry}
+\RequirePackage{lmodern}
+\RequirePackage{chngcntr}
+\RequirePackage{caption}
 \RequirePackage{pgffor}
 \RequirePackage{lastpage}
 \RequirePackage{tabularx}
-\captionsetup[figure]{labelsep=endash,labelfont=bf,textfont=bf}
-\captionsetup[table]{labelsep=endash,labelfont=bf,textfont=bf}
+\RequirePackage{enumerate}
+\RequirePackage{fancyhdr}
+\RequirePackage{booktabs}
+\RequirePackage{graphicx}
+
+%-- Configurações de margens da folha A4 de acordo com a ABNT.
+\geometry{top=3cm,bottom=2cm,left=3cm,right=2cm}
+
+%-- Espaçamento entre as linhas conforme a ABNT.
+\setlength{\parindent}{1.25cm}
+\setlength{\baselineskip}{1.5\baselineskip}
+
+\captionsetup[figure]{labelsep=endash}
+\captionsetup[table]{labelsep=endash}
 \pagestyle {empty}
 \pagestyle {myheadings}
 
-% -- Enumeração de Listas -- 
-\usepackage{enumerate}
-%\begin{enumerate}[a)]
-%	\item
-%	\item 
-%\end{enumerate}
+\setlength{\headheight}{15pt}
+\font\cabecalho=cmr12 at 9pt %-- Opcional para aumentar o tamanho da fonte do cabeçalho.
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\emph{\cabecalho\nouppercase\leftmark}}
+\fancyhead[R]{\cabecalho\thepage}
+
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\cabecalho\thepage}
+}
 
 
 % --- Nome da universidade ---
@@ -410,4 +427,3 @@
 	\bibliographystyle{abnt-alf}
 	\bibliography{#1}
 }
-\newenvironment{fichacatalografica}{\comment}{\endcomment}
