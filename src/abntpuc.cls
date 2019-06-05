@@ -8,7 +8,9 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{abntpuc}
 \LoadClass[a4paper, 12pt]{report}
-
+\RequirePackage{float}
+\RequirePackage{titlesec}
+\RequirePackage{tocloft,etoolbox}
 \RequirePackage[brazilian]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[a4paper]{geometry}
@@ -292,6 +294,10 @@
 \end{newpage}
 }
 
+\patchcmd{\l@chapter}{#1}{\MakeUppercase{#1}}{}{}
+\patchcmd{\l@subsection}{#1}{\normalfont{#1}}{}{}
+\patchcmd{\l@subsubsection}{#1}{\normalfont{\emph{#1}}}{}{}
+
 % --- SUMARIO ---
 \newcommand{\sumario}
 {
@@ -385,8 +391,8 @@
 {section}
 {0}
 {0mm}
-{0.8\baselineskip}
-{0.8\baselineskip}
+{0.5\baselineskip}
+{0.5\baselineskip}
 {\noindent\bfseries}}
 
 % --- Titulo de subsecao ---
@@ -395,9 +401,9 @@
 {subsection}
 {1}
 {0mm}
-{0.8\baselineskip}
-{0.8\baselineskip}
-{\noindent\itshape}}
+{0.5\baselineskip}
+{0.5\baselineskip}
+{\noindent\bfseries}}
 
 % --- Titulo de subsubsecao ---
 \newcommand{\subsubsecao}[1]{\subsubsection{#1}}
@@ -405,9 +411,9 @@
 {subsubsection}
 {2}
 {0mm}
-{0.8\baselineskip}
-{0.8\baselineskip} 
-{\noindent\bfseries}} 
+{0.5\baselineskip}
+{0.5\baselineskip} 
+{\noindent\itshape}} 
 
 
 % --- REFERENCIAS ---
