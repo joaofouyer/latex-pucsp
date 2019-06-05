@@ -419,7 +419,7 @@
 % --- REFERENCIAS ---
 \usepackage[alf]{abntcite}
 \def\@makeschapterhead#1{
-        \thispagestyle{myheadings}
+        \thispagestyle{empty}
 	\begin{center} \textbf{#1}\par \end{center}
         \addcontentsline{toc}{chapter}{\bibname}
 	\vspace{1.5\baselineskip}
