@@ -6,50 +6,74 @@
 % João E. L. Fouyer (jfouyer@gmail.com)
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{abntpuc}
-\LoadClass[a4paper, 12pt]{report}
-\RequirePackage{float}
-\RequirePackage{titlesec}
-\RequirePackage{tocloft,etoolbox}
-\RequirePackage[brazilian]{babel}
+\ProvidesClass{abntpuc} % Nome do modelo personalizado que será utilizado no documento.
+\LoadClass[a4paper, 12pt]{report} % Configurações da página para o output do PDF.
+\RequirePackage[brazil]{babel} % Suporte a português
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[a4paper]{geometry}
-\RequirePackage{lmodern}
+\RequirePackage{lmodern} % Utiliza a fonte Latin Modern, padrão do LaTeX
+\RequirePackage{fancyhdr} % Necessário para colocar o cabeçalho com nome do capítulo e número da página.
 \RequirePackage{chngcntr}
 \RequirePackage{caption}
 \RequirePackage{pgffor}
 \RequirePackage{lastpage}
 \RequirePackage{tabularx}
-\RequirePackage{enumerate}
-\RequirePackage{fancyhdr}
-\RequirePackage{booktabs}
-\RequirePackage{graphicx}
+\RequirePackage{enumerate} % Necessário para listas ordenadas
+\RequirePackage{float}
+\RequirePackage{titlesec}
+\RequirePackage{tocloft,etoolbox}
 
-%-- Configurações de margens da folha A4 de acordo com a ABNT.
+\usepackage[pdftex,colorlinks=false]{hyperref}
+% \hypersetup{pdftitle={Título con acentos o eñes},pdfauthor={Migueláñez}} % Utilizado para tornar os itens do sumário e as referências clicáveis no PDF.
+
+\usepackage{amsmath}
+\usepackage[alf]{abntcite}
+\usepackage[pdftex]{graphicx}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{etoolbox}
+\usepackage{algpseudocode,algorithm}
+\usepackage{makecell}
+\usepackage{indentfirst}
+\usepackage{nameref}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{lscape}
+\usepackage{adjustbox}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{array}
+
+
+\patchcmd{\l@chapter}{#1}{{#1}}{}{}
+\patchcmd{\l@subsection}{#1}{\normalfont{#1}}{}{}
+\patchcmd{\l@subsubsection}{#1}{\normalfont{\emph{#1}}}{}{}
+
+
 \geometry{top=3cm,bottom=2cm,left=3cm,right=2cm}
 
-%-- Espaçamento entre as linhas conforme a ABNT.
 \setlength{\parindent}{1.25cm}
 \setlength{\baselineskip}{1.5\baselineskip}
-
 \captionsetup[figure]{labelsep=endash}
 \captionsetup[table]{labelsep=endash}
 \pagestyle {empty}
 \pagestyle {myheadings}
 
-\setlength{\headheight}{15pt}
-\font\cabecalho=cmr12 at 9pt %-- Opcional para aumentar o tamanho da fonte do cabeçalho.
 
+%-- Configuração do cabeçalho
+\setlength{\headheight}{15pt}
+\font\cabecalho=cmr12 at 9pt
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\emph{\cabecalho\nouppercase\leftmark}}
 \fancyhead[R]{\cabecalho\thepage}
-
 \fancypagestyle{plain}{
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \fancyhead[R]{\cabecalho\thepage}
 }
+
 
 
 % --- Nome da universidade ---
@@ -67,10 +91,6 @@
 % --- Nome do curso ---
 \newcommand{\imprimircurso}{}
 \newcommand{\curso}[1]{\renewcommand{\imprimircurso}{#1}}
-
-% --- Nome do autor ---
-\newcommand{\imprimirautor}{}
-\newcommand{\autor}[1]{\renewcommand{\imprimirautor}{#1}}
 
 % --- Titulo do trabalho ---
 \newcommand{\imprimirtitulo}{}
@@ -116,6 +136,8 @@
 \newcommand{\imprimirpreambulo}{}
 \newcommand{\preambulo}[1]{\renewcommand{\imprimirpreambulo}{#1}}
 
+
+
 % --- Palavras chaves para Ficha Catalográfica ---
 \providecommand{\imprimirchaves}{}
 \newcommand{\palavraschave}[5]{\renewcommand{\imprimirchaves}{\hspace{0.6cm} 1. #1. \hspace{0.05cm} 2. 
@@ -144,7 +166,8 @@
 	\begin{flushright}
 	    \begin{minipage}{.3\textwidth}
             \begin{flushright}
-                \imprimirautor
+                \renewcommand\and{\\}
+                \@author
             \end{flushright}
         \end{minipage}
 	\end{flushright}
@@ -160,7 +183,8 @@
 \newcommand{\folharosto}{
 	\thispagestyle{empty}
 	\begin{center}
-		\MakeUppercase{\imprimirautor}
+	    \renewcommand\and{, }
+		\MakeUppercase{\@author}
 	\end{center}
 	\vfill
 	\begin{center}
@@ -187,7 +211,8 @@
 \newcommand{\folhaaprovacao}{
 	\thispagestyle{empty}
 	\begin{center}
-		\imprimirautor
+	    \renewcommand\and{, }
+		\MakeUppercase{\@author}
 	\end{center}
 	\vfill 
 	\begin{center}
@@ -294,9 +319,9 @@
 \end{newpage}
 }
 
-\patchcmd{\l@chapter}{#1}{\MakeUppercase{#1}}{}{}
-\patchcmd{\l@subsection}{#1}{\normalfont{#1}}{}{}
-\patchcmd{\l@subsubsection}{#1}{\normalfont{\emph{#1}}}{}{}
+% \patchcmd{\l@chapter}{#1}{\MakeUppercase{#1}}{}{}
+% \patchcmd{\l@subsection}{#1}{\normalfont{#1}}{}{}
+% \patchcmd{\l@subsubsection}{#1}{\normalfont{\emph{#1}}}{}{}
 
 % --- SUMARIO ---
 \newcommand{\sumario}
@@ -304,7 +329,7 @@
 	\thispagestyle{empty}
 	\setlength{\baselineskip}{1.0\baselineskip}
 	\begin{center}
-		\textbf{SUMÁRIO} \\ [1.5\baselineskip]
+		\textbf{SUMÁRIO}
 	\end{center}
 	\@starttoc{toc}
 	\newpage
@@ -379,16 +404,14 @@
 \renewcommand{\cftsubsecfont}{\itshape}
 \setlength{\cftsubsubsecindent}{0em}
 \renewcommand{\cftsubsubsecfont}{\bfseries}
-%\usepackage{titlesec}
 
 % --- Titulo de capitulo ---
 \newcommand{\capitulo}[1]{\chapter{#1} \thispagestyle{myheadings}}
-\renewcommand{\@makechapterhead}[1]{\noindent{\MakeUppercase{\textbf{\thechapter~#1}}}\vspace{0.5cm}}
+\renewcommand{\@makechapterhead}[1]{\noindent{\MakeUppercase{\textbf{\thechapter~#1}}\par}\vspace{0.5cm}}
 
 % --- Titulo de secao ---
 \newcommand{\secao}[1]{\section{#1}}
-\renewcommand{\section}{\@startsection
-{section}
+\renewcommand{\section}{\@startsection{section}
 {0}
 {0mm}
 {0.5\baselineskip}
@@ -415,13 +438,12 @@
 {0.5\baselineskip} 
 {\noindent\itshape}} 
 
-
-% --- REFERENCIAS ---
 \usepackage[alf]{abntcite}
+% --- REFERENCIAS ---
 \def\@makeschapterhead#1{
         \thispagestyle{empty}
 	\begin{center} \textbf{#1}\par \end{center}
-        \addcontentsline{toc}{chapter}{\bibname}
+        % \addcontentsline{toc}{chapter}{\bibname}
 	\vspace{1.5\baselineskip}
 }
 

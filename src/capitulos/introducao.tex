@@ -1,20 +1,46 @@
-\chapter{Introdução} \par
+\chapter{INTRODUÇÃO}
 O presente documento tem por objetivo servir de modelo para a elaboração de trabalhos acadêmicos --  como monografias, trabalhos de conclusão de curso, teses de metrado etc. A estrutura textual segue o modelo indicado para a elaboração de trabalhos de conclusão para o curso de Ciência da Computação da PUC-SP. 
 
 \section{Motivação}
 Deverá ser descrito nesta seção o problema ou a proposta da pesquisa. Geralmente tem de uma a três páginas e não contém os objetivos.
 
+\subsection{Subseção}
+Subseções podem ser utilizadas para auxiliar na organização do texto.
+
+\subsubsection{Sub-subseção}
+Até mesmo sub-subseções também podem ser utilizadas.
+
 \section{Objetivos}
 Nesta seção, os objetivos gerais e específicos deverão ser descritos.
 
 \subsection{Objetivo Geral}
-Deve sempre começar no infinitivo.
+Deve descrever de forma abrangente o objetivo geral do trabalho.
 
 \subsection{Objetivos Específicos}
-Deve sempre começar no infinitivo.
+Pode ser escrito em forma de \emph{bullets}. Cada \emph{bullet} deve começar no infinitivo. Para listas não ordenadas em \LaTeX, basta utilizar o comando \emph{itemize}. 
+
+\begin{itemize}
+    \item Apresentar um modelo de Trabalho de Conclusão de curso para alunos de computação;
+    \item Introduzir os principais elementos do \LaTeX.
+\end{itemize}
+
+Para listas enumeradas, é possível utilizar o comando \emph{enumerate}. Caso seja necessário, é permitido encadear listas.
+
+\begin{enumerate}
+    \item Item 1
+    \begin{itemize}
+        \item Sub-item
+        \item Sub-item
+    \end{itemize}
+    \item Item 2
+    \begin{enumerate}
+        \item Item 2a
+        \item Item 2b
+    \end{enumerate}
+\end{enumerate}
 
 \section{Justificativa}
-Pode ser opcional no TCC para trabalhos de conclusão de curso na área da computação.
+É oopcional no TCC para trabalhos de conclusão de curso na área da computação.
 
 \section{Delimitação do Problema}
 Até onde pesquisar?
@@ -31,12 +57,12 @@ Este documento é apresentado em \ref{chap:last} capítulos, referências biblio
 
 No primeiro capítulo, Introdução, descreve-se a problemática, motivação, objetivos gerais e específicos e a metodologia de pesquisa que será utilizada no projeto. 
 
-No capítulo 2, Revisão Bibliográfica, é apresentada a fundamentação teórica que abordará com detalhes a complexidade dos problemas. No caso de desenvolvimento de algum protótipo, descreve-se o método que será utilizado. Por fim, deve-se realizar resumo de pelo menos três trabalhos relacionados à pesquisa.
+No capítulo 2, Revisão Bibliográfica, é apresentada a fundamentação teórica que abordará com detalhes a complexidade dos problemas. No caso de desenvolvimento de algum protótipo, descreve-se o método que será utilizado. Deve-se realizar resumo de pelo menos três trabalhos relacionados à pesquisa.
 
-Por fim, no capítulo \ref{chap:last}, será exposta a análise crítica do problema e quais são possíveis pontos de melhorias para trabalhos futuros.
+Por fim, no capítulo \ref{conclusao}, será exposta a análise crítica do problema e quais são possíveis pontos de melhorias para trabalhos futuros.
 
 \newpage
 \section{Cronograma}
-O cronograma é apresentado com a distribuição das macroatividades propostas no Método de Pesquisa \ref{metodo-pesquisa}.
+O cronograma é apresentado com a distribuição das macroatividades propostas no Método de Pesquisa \ref{metodo-pesquisa}. O \LaTeX Table Generator pode ser utilizado para auxiliar na elaboração de tabelas. (https://www.tablesgenerator.com/). 
 
-\input{main/cronograma}
+\input{tabelas/cronograma.tex}
