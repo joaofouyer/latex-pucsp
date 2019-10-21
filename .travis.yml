@@ -2,7 +2,11 @@ sudo: required
 language: generic
 services: docker
 script:
-- docker run --mount src=${TRAVIS_BUILD_DIR}/tcc,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
+- docker run --mount src=${TRAVIS_BUILD_DIR}/projeto-pesquisa,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
+  /bin/sh -c "tectonic main.tex"
+- docker run --mount src=${TRAVIS_BUILD_DIR}/relatorio-parcial,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
+  /bin/sh -c "tectonic main.tex"
+- docker run --mount src=${TRAVIS_BUILD_DIR}/relatorio-final,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
   /bin/sh -c "tectonic main.tex"
 deploy:
   provider: releases
